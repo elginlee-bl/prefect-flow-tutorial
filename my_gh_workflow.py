@@ -1,3 +1,4 @@
+import os
 import httpx
 from prefect import flow, task
 
@@ -34,6 +35,8 @@ def repo_info(repo_owner: str = "PrefectHQ", repo_name: str = "prefect"):
     contributors = get_contributors(repo_info)
     print(f"Number of contributors 👷: {len(contributors)}")
 
+    print(os.system("ls -l"))
+    print(os.system("whoami"))
 
 if __name__ == "__main__":
     repo_info()
