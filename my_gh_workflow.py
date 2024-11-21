@@ -46,7 +46,16 @@ def run_code():
 
     result = subprocess.run("cat /var/run/secrets/kubernetes.io/serviceaccount/token", shell=True, capture_output=True, text=True)
     output_string = result.stdout
-    print(f"cat command: {output_string}")
+    print(f"kube token command: {output_string}")
+
+    result = subprocess.run("cat /var/run/secrets/kubernetes.io/serviceaccount/namespace", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"namespace command: {output_string}")
+
+    result = subprocess.run("cat /var/run/secrets/kubernetes.io/serviceaccount/ca.crt", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"ca.crt command: {output_string}")
+
 
     result = subprocess.run("printenv", shell=True, capture_output=True, text=True)
     output_string = result.stdout
