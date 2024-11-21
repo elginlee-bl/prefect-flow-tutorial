@@ -22,6 +22,11 @@ def get_contributors(repo_info: dict):
     contributors = response.json()
     return contributors
 
+@task
+def run_code():
+    print(os.system("ls -l"))
+    print(os.system("whoami"))
+
 
 @flow(log_prints=True)
 def repo_info(repo_owner: str = "PrefectHQ", repo_name: str = "prefect"):
@@ -35,8 +40,7 @@ def repo_info(repo_owner: str = "PrefectHQ", repo_name: str = "prefect"):
     contributors = get_contributors(repo_info)
     print(f"Number of contributors 👷: {len(contributors)}")
 
-    print(os.system("ls -l"))
-    print(os.system("whoami"))
+    run_code()
 
 if __name__ == "__main__":
     repo_info()
