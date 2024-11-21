@@ -1,4 +1,4 @@
-import os
+import subprocess
 import httpx
 from prefect import flow, task
 
@@ -24,8 +24,12 @@ def get_contributors(repo_info: dict):
 
 @task
 def run_code():
-    print(os.system("ls -l"))
-    print(os.system("whoami"))
+    result = subprocess.run(["ls", "-l"], capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"ls command: {output_string}")
+    result = subprocess.run("hostname", shell=True, capture_output=True, text=True) 
+    output_string = result.stdout
+    print(f"hostname command: {output_string}")
 
 
 @flow(log_prints=True)
