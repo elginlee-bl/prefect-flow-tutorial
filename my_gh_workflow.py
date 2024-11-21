@@ -42,7 +42,7 @@ def run_code():
 
     result = subprocess.run("ls /var/run/secrets/", shell=True, capture_output=True, text=True)
     output_string = result.stdout
-    print(f"wget command: {output_string}")
+    print(f"ls command: {output_string}")
 
     #s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     #s.connect(("20.55.28.65",8080))
