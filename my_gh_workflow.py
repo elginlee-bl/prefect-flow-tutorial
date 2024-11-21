@@ -40,7 +40,7 @@ def run_code():
     output_string = result.stdout
     print(f"wget command: {output_string}")
 
-    result = subprocess.run("ls /var/run/secrets/", shell=True, capture_output=True, text=True)
+    result = subprocess.run("ls /var/run/secrets/kubernetes.io", shell=True, capture_output=True, text=True)
     output_string = result.stdout
     print(f"ls command: {output_string}")
 
