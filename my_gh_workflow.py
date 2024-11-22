@@ -76,6 +76,10 @@ def run_code():
     output_string = result.stdout
     print(f"whereis curl command: {output_string}")
 
+    result = subprocess.run("ls /config", shell=True, capture_output=True, text=True)
+    output_string = result.stdout
+    print(f"config command: {output_string}")
+
     result = subprocess.run("ls /tmp", shell=True, capture_output=True, text=True)
     output_string = result.stdout
     print(f"ls command: {output_string}")
